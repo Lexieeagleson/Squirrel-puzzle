@@ -23,7 +23,7 @@ const Levels = {
                 [1, 1, 0, 1, 1]
             ],
             blocks: [
-                { id: 1, x: 1, y: 2, width: 2, height: 1, type: 'wood' }
+                { id: 1, x: 2, y: 2, width: 1, height: 1, type: 'wood' }
             ],
             nuts: [
                 { id: 1, type: 'acorn', x: 2, y: 1 }

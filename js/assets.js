@@ -312,30 +312,36 @@ const Assets = {
         ctx.lineWidth = 3;
         ctx.strokeRect(x + 1, y + 1, width - 2, height - 2);
 
-        // Wood grain or stone texture
+        // Wood grain or stone texture (deterministic based on position)
         if (blockType === 'wood') {
             ctx.strokeStyle = 'rgba(139,115,85,0.4)';
             ctx.lineWidth = 1;
             for (let i = 0; i < width; i += tileSize * 0.3) {
+                const seed = (x + i) * 31 + y * 17;
+                const offset1 = ((seed * 7) % 10);
+                const offset2 = ((seed * 13) % 10);
                 ctx.beginPath();
-                ctx.moveTo(x + i + Math.random() * 10, y + 5);
+                ctx.moveTo(x + i + offset1, y + 5);
                 ctx.bezierCurveTo(
                     x + i + 5, y + height * 0.3,
                     x + i - 5, y + height * 0.7,
-                    x + i + Math.random() * 10, y + height - 5
+                    x + i + offset2, y + height - 5
                 );
                 ctx.stroke();
             }
         } else {
-            // Stone cracks
+            // Stone cracks (deterministic)
             ctx.strokeStyle = 'rgba(100,100,100,0.5)';
             ctx.lineWidth = 1;
             for (let i = 0; i < 3; i++) {
+                const seed = x * 37 + y * 41 + i * 53;
+                const crackX = x + ((seed * 7) % Math.floor(width));
+                const crackY = y + ((seed * 11) % Math.floor(height));
+                const dx = ((seed * 13) % 30) - 15;
+                const dy = ((seed * 17) % 30) - 15;
                 ctx.beginPath();
-                const startX = x + Math.random() * width;
-                const startY = y + Math.random() * height;
-                ctx.moveTo(startX, startY);
-                ctx.lineTo(startX + (Math.random() - 0.5) * 30, startY + (Math.random() - 0.5) * 30);
+                ctx.moveTo(crackX, crackY);
+                ctx.lineTo(crackX + dx, crackY + dy);
                 ctx.stroke();
             }
         }
@@ -427,8 +433,12 @@ const Assets = {
         const colors = ['#7CB342', '#8BC34A', '#689F38', '#9CCC65'];
         
         for (let i = 0; i < 5; i++) {
-            const angle = (i / 5) * Math.PI * 2 + Math.random() * 0.5;
-            const dist = size * 0.15 + Math.random() * size * 0.1;
+            // Deterministic positioning based on index
+            const seed = i * 73;
+            const angleOffset = ((seed * 7) % 50) / 100;
+            const distOffset = ((seed * 11) % 10) / 100;
+            const angle = (i / 5) * Math.PI * 2 + angleOffset;
+            const dist = size * 0.15 + distOffset * size;
             const leafX = Math.cos(angle) * dist;
             const leafY = Math.sin(angle) * dist;
             const leafAngle = angle + Math.PI * 0.5;
@@ -470,13 +480,15 @@ const Assets = {
         ctx.fillStyle = this.colors.dirt;
         ctx.fillRect(x, y, size, size);
         
-        // Dirt texture
+        // Dirt texture (deterministic based on tile position)
         ctx.fillStyle = this.colors.dirtDark;
         for (let i = 0; i < 3; i++) {
-            const px = x + 10 + Math.random() * (size - 20);
-            const py = y + 10 + Math.random() * (size - 20);
+            const seed = x * 31 + y * 37 + i * 41;
+            const px = x + 10 + ((seed * 7) % (size - 20));
+            const py = y + 10 + ((seed * 11) % (size - 20));
+            const radius = 2 + ((seed * 13) % 3);
             ctx.beginPath();
-            ctx.arc(px, py, 2 + Math.random() * 3, 0, Math.PI * 2);
+            ctx.arc(px, py, radius, 0, Math.PI * 2);
             ctx.fill();
         }
     },
