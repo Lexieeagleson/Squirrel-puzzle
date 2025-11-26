@@ -78,12 +78,13 @@ Then navigate to `http://localhost:8000`
 
 ## 🌐 Deployment
 
-### GitHub Pages
-1. Push the repository to GitHub
-2. Go to Settings → Pages
-3. Select "Deploy from a branch"
-4. Choose `main` branch and `/ (root)` folder
-5. Your game will be available at `https://[username].github.io/Squirrel-puzzle/`
+### GitHub Pages (Automatic)
+This repository is configured with GitHub Actions for automatic deployment to GitHub Pages.
+
+1. Push changes to the `main` branch
+2. GitHub Actions will automatically build and deploy the site
+3. Go to Settings → Pages and select "GitHub Actions" as the source (first time only)
+4. Your game will be available at `https://[username].github.io/Squirrel-puzzle/`
 
 ### Other Hosting
 Simply upload all files to any static web host (Netlify, Vercel, etc.)
