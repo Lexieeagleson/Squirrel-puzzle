@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Squirrel Drop - Puzzle Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen">
+            <div class="title-container">
+                <h1>🐿️ Squirrel Drop 🌰</h1>
+                <p>Help the squirrel collect nuts!</p>
+            </div>
+            <button id="play-btn" class="game-btn">Play</button>
+            <button id="level-select-btn" class="game-btn secondary">Level Select</button>
+        </div>
+
+        <!-- Level Select Screen -->
+        <div id="level-select-screen" class="screen hidden">
+            <h2>Select Level</h2>
+            <div id="level-grid"></div>
+            <button id="back-to-menu-btn" class="game-btn secondary">Back to Menu</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="screen hidden">
+            <div id="game-header">
+                <button id="menu-btn" class="icon-btn">☰</button>
+                <span id="level-display">Level 1</span>
+                <button id="restart-btn" class="icon-btn">↺</button>
+            </div>
+            <canvas id="game-canvas"></canvas>
+            <div id="game-footer">
+                <span id="moves-display">Moves: 0</span>
+            </div>
+        </div>
+
+        <!-- Win Popup -->
+        <div id="win-popup" class="popup hidden">
+            <div class="popup-content">
+                <div id="squirrel-celebration">🐿️</div>
+                <h2>Level Complete!</h2>
+                <p id="win-stats"></p>
+                <button id="next-level-btn" class="game-btn">Next Level</button>
+                <button id="replay-btn" class="game-btn secondary">Replay</button>
+            </div>
+        </div>
+
+        <!-- Pause Menu -->
+        <div id="pause-menu" class="popup hidden">
+            <div class="popup-content">
+                <h2>Paused</h2>
+                <button id="resume-btn" class="game-btn">Resume</button>
+                <button id="restart-level-btn" class="game-btn secondary">Restart Level</button>
+                <button id="exit-to-menu-btn" class="game-btn secondary">Exit to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/assets.js"></script>
+    <script src="js/levels.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
