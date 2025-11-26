@@ -329,29 +329,28 @@ class Game {
                 nut.pixelY += nut.velocity * deltaTime;
                 
                 // Check if nut reached basket
-                const gridY = Math.floor((nut.pixelY - this.tileSize / 2) / this.tileSize);
                 const gridX = Math.floor((nut.pixelX - this.tileSize / 2) / this.tileSize);
                 
-                if (gridY >= this.currentLevel.gridHeight - 1) {
+                // Calculate the maximum Y position (bottom of the last row)
+                const maxPixelY = (this.currentLevel.gridHeight - 1) * this.tileSize + this.tileSize / 2;
+                
+                // Check if nut has reached or passed the bottom row
+                if (nut.pixelY >= maxPixelY) {
+                    // Clamp the nut position to the bottom row
+                    nut.pixelY = maxPixelY;
+                    
                     // Find matching basket
                     for (const basket of this.baskets) {
                         if (basket.x === gridX && basket.type === nut.type && !basket.filled) {
                             nut.collected = true;
-                            nut.falling = false;
                             basket.filled = true;
                             this.filledBaskets.add(basket.id);
-                            
-                            // Stop at basket position
-                            nut.pixelY = basket.pixelY;
                             break;
                         }
                     }
                     
-                    // If no matching basket, nut falls off or wrong basket
-                    if (!nut.collected && gridY > this.currentLevel.gridHeight) {
-                        nut.falling = false;
-                        // Nut is lost - could trigger game over or just mark as failed
-                    }
+                    // Stop falling regardless of whether collected
+                    nut.falling = false;
                 }
             }
         }
