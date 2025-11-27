@@ -168,12 +168,12 @@ const Levels = {
                 [1, 0, 1, 0, 1]
             ],
             blocks: [
-                { id: 1, x: 1, y: 1, width: 2, height: 1, type: 'wood' },
-                { id: 2, x: 2, y: 3, width: 2, height: 1, type: 'wood' },
-                { id: 3, x: 1, y: 5, width: 2, height: 1, type: 'stone' }
+                { id: 1, x: 2, y: 1, width: 1, height: 1, type: 'wood' },
+                { id: 2, x: 3, y: 3, width: 1, height: 1, type: 'wood' },
+                { id: 3, x: 2, y: 5, width: 1, height: 1, type: 'stone' }
             ],
             nuts: [
-                { id: 1, type: 'acorn', x: 2, y: 0 }
+                { id: 1, type: 'acorn', x: 3, y: 0 }
             ],
             baskets: [
                 { id: 1, type: 'acorn', x: 3, y: 7 }
