@@ -138,7 +138,7 @@ const Levels = {
             blocks: [
                 { id: 1, x: 1, y: 2, width: 2, height: 1, type: 'wood' },
                 { id: 2, x: 3, y: 3, width: 2, height: 1, type: 'wood' },
-                { id: 3, x: 1, y: 4, width: 3, height: 1, type: 'stone' }
+                { id: 3, x: 1, y: 4, width: 2, height: 1, type: 'stone' }
             ],
             nuts: [
                 { id: 1, type: 'pecan', x: 1, y: 0 },
@@ -197,8 +197,8 @@ const Levels = {
                 [0, 0, 1, 0, 1, 0, 0]
             ],
             blocks: [
-                { id: 1, x: 1, y: 2, width: 3, height: 1, type: 'wood' },
-                { id: 2, x: 3, y: 4, width: 3, height: 1, type: 'wood' }
+                { id: 1, x: 1, y: 2, width: 2, height: 1, type: 'wood' },
+                { id: 2, x: 3, y: 4, width: 2, height: 1, type: 'wood' }
             ],
             nuts: [
                 { id: 1, type: 'walnut', x: 1, y: 0 },
@@ -232,7 +232,7 @@ const Levels = {
             blocks: [
                 { id: 1, x: 1, y: 1, width: 2, height: 1, type: 'wood' },
                 { id: 2, x: 3, y: 3, width: 2, height: 1, type: 'wood' },
-                { id: 3, x: 1, y: 5, width: 3, height: 1, type: 'stone' }
+                { id: 3, x: 1, y: 5, width: 2, height: 1, type: 'stone' }
             ],
             nuts: [
                 { id: 1, type: 'acorn', x: 1, y: 0 },
@@ -264,7 +264,7 @@ const Levels = {
             blocks: [
                 { id: 1, x: 1, y: 1, width: 2, height: 1, type: 'wood' },
                 { id: 2, x: 4, y: 1, width: 2, height: 1, type: 'wood' },
-                { id: 3, x: 2, y: 4, width: 3, height: 1, type: 'stone' },
+                { id: 3, x: 2, y: 4, width: 2, height: 1, type: 'stone' },
                 { id: 4, x: 1, y: 5, width: 2, height: 1, type: 'wood' }
             ],
             nuts: [
@@ -298,11 +298,11 @@ const Levels = {
                 [0, 0, 1, 0, 0, 1, 0, 0]
             ],
             blocks: [
-                { id: 1, x: 1, y: 1, width: 3, height: 1, type: 'wood' },
-                { id: 2, x: 4, y: 2, width: 3, height: 1, type: 'wood' },
+                { id: 1, x: 1, y: 1, width: 2, height: 1, type: 'wood' },
+                { id: 2, x: 4, y: 2, width: 2, height: 1, type: 'wood' },
                 { id: 3, x: 1, y: 4, width: 2, height: 1, type: 'stone' },
                 { id: 4, x: 4, y: 5, width: 2, height: 1, type: 'stone' },
-                { id: 5, x: 2, y: 7, width: 4, height: 1, type: 'wood' }
+                { id: 5, x: 2, y: 7, width: 2, height: 1, type: 'wood' }
             ],
             nuts: [
                 { id: 1, type: 'acorn', x: 1, y: 0 },
@@ -369,9 +369,9 @@ const Levels = {
             blocks: [
                 { id: 1, x: 1, y: 1, width: 2, height: 1, type: 'wood' },
                 { id: 2, x: 4, y: 1, width: 2, height: 1, type: 'wood' },
-                { id: 3, x: 1, y: 2, width: 4, height: 1, type: 'stone' },
+                { id: 3, x: 1, y: 2, width: 2, height: 1, type: 'stone' },
                 { id: 4, x: 2, y: 4, width: 2, height: 1, type: 'wood' },
-                { id: 5, x: 1, y: 5, width: 3, height: 1, type: 'wood' }
+                { id: 5, x: 1, y: 5, width: 2, height: 1, type: 'wood' }
             ],
             nuts: [
                 { id: 1, type: 'walnut', x: 1, y: 0 },
