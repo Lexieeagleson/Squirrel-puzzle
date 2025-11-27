@@ -438,6 +438,13 @@ class Game {
             }
         }
 
+        // Draw nuts that have stopped falling (behind baskets)
+        for (const nut of this.nuts) {
+            if (!nut.falling && !nut.collected) {
+                Assets.drawNut(ctx, nut.type, nut.pixelX, nut.pixelY, this.tileSize);
+            }
+        }
+
         // Draw baskets
         for (const basket of this.baskets) {
             Assets.drawBasket(ctx, basket.type, basket.pixelX, basket.pixelY, this.tileSize, basket.filled);
@@ -469,9 +476,9 @@ class Game {
             }
         }
 
-        // Draw nuts
+        // Draw nuts that are still falling (in front of everything)
         for (const nut of this.nuts) {
-            if (!nut.collected || nut.falling) {
+            if (nut.falling) {
                 Assets.drawNut(ctx, nut.type, nut.pixelX, nut.pixelY, this.tileSize);
             }
         }
