@@ -101,6 +101,9 @@ class Game {
         // Update moves display
         this.updateMovesDisplay();
         
+        // Check for any nuts that can fall at level start
+        this.checkFallingNuts();
+        
         // Start game loop
         if (!this.animationFrame) {
             this.lastTime = performance.now();
