@@ -615,13 +615,11 @@ const Levels = {
             ],
             nuts: [
                 { id: 1, type: 'chestnut', x: 1, y: 0 },
-                { id: 2, type: 'hazelnut', x: 3, y: 0 },
-                { id: 3, type: 'pecan', x: 6, y: 0 }
+                { id: 2, type: 'hazelnut', x: 6, y: 0 }
             ],
             baskets: [
                 { id: 1, type: 'chestnut', x: 3, y: 8 },
-                { id: 2, type: 'hazelnut', x: 4, y: 8 },
-                { id: 3, type: 'pecan', x: 3, y: 8 }
+                { id: 2, type: 'hazelnut', x: 4, y: 8 }
             ],
             par: 6
         },
