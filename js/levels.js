@@ -273,9 +273,9 @@ const Levels = {
                 { id: 3, type: 'chestnut', x: 5, y: 0 }
             ],
             baskets: [
-                { id: 1, type: 'chestnut', x: 1, y: 7 },
-                { id: 2, type: 'walnut', x: 3, y: 7 },
-                { id: 3, type: 'almond', x: 5, y: 7 }
+                { id: 1, type: 'walnut', x: 1, y: 7 },
+                { id: 2, type: 'almond', x: 3, y: 7 },
+                { id: 3, type: 'chestnut', x: 5, y: 7 }
             ],
             par: 6
         },
@@ -311,10 +311,10 @@ const Levels = {
                 { id: 4, type: 'pecan', x: 6, y: 0 }
             ],
             baskets: [
-                { id: 1, type: 'pecan', x: 1, y: 8 },
-                { id: 2, type: 'hazelnut', x: 3, y: 8 },
-                { id: 3, type: 'walnut', x: 4, y: 8 },
-                { id: 4, type: 'acorn', x: 6, y: 8 }
+                { id: 1, type: 'acorn', x: 1, y: 8 },
+                { id: 2, type: 'walnut', x: 3, y: 8 },
+                { id: 3, type: 'hazelnut', x: 4, y: 8 },
+                { id: 4, type: 'pecan', x: 6, y: 8 }
             ],
             par: 8
         },
@@ -333,19 +333,19 @@ const Levels = {
                 [1, 1, 0, 0, 1, 1],
                 [1, 0, 0, 0, 0, 1],
                 [1, 0, 0, 0, 0, 1],
-                [1, 0, 1, 1, 0, 1]
+                [1, 1, 0, 0, 1, 1]
             ],
             blocks: [
                 { id: 1, x: 1, y: 2, width: 2, height: 1, type: 'wood' },
                 { id: 2, x: 2, y: 5, width: 2, height: 1, type: 'wood' }
             ],
             nuts: [
-                { id: 1, type: 'chestnut', x: 2, y: 0 },
-                { id: 2, type: 'almond', x: 3, y: 0 }
+                { id: 1, type: 'almond', x: 2, y: 0 },
+                { id: 2, type: 'chestnut', x: 3, y: 0 }
             ],
             baskets: [
-                { id: 1, type: 'almond', x: 1, y: 7 },
-                { id: 2, type: 'chestnut', x: 4, y: 7 }
+                { id: 1, type: 'almond', x: 2, y: 7 },
+                { id: 2, type: 'chestnut', x: 3, y: 7 }
             ],
             par: 4
         },
@@ -379,9 +379,9 @@ const Levels = {
                 { id: 3, type: 'pecan', x: 5, y: 0 }
             ],
             baskets: [
-                { id: 1, type: 'pecan', x: 1, y: 7 },
-                { id: 2, type: 'walnut', x: 3, y: 7 },
-                { id: 3, type: 'hazelnut', x: 5, y: 7 }
+                { id: 1, type: 'walnut', x: 1, y: 7 },
+                { id: 2, type: 'hazelnut', x: 3, y: 7 },
+                { id: 3, type: 'pecan', x: 5, y: 7 }
             ],
             par: 7
         }
