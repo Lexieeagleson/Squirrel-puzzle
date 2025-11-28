@@ -13,6 +13,7 @@ class Game {
         this.moves = 0;
         this.isPlaying = false;
         this.isAnimating = false;
+        this.winChecked = false;
         
         // Game objects
         this.grid = [];
@@ -65,6 +66,7 @@ class Game {
         this.levelId = levelId;
         this.moves = 0;
         this.isPlaying = true;
+        this.winChecked = false;
         this.filledBaskets = new Set();
         this.animations = [];
 
@@ -359,11 +361,13 @@ class Game {
         }
         
         if (!anyFalling) {
+            const wasAnimating = this.isAnimating;
             this.isAnimating = false;
             
-            // Check win condition
-            if (this.checkWinCondition()) {
-                this.onLevelComplete();
+            // Only check win condition once after animations complete
+            // This ensures we don't repeatedly check and only check after actual gameplay
+            if (wasAnimating && !this.winChecked) {
+                this.checkAndHandleWin();
             }
         }
         
@@ -374,9 +378,35 @@ class Game {
         this.animationFrame = requestAnimationFrame(this.update);
     }
 
+    /**
+     * Centralized win condition check - used by all levels
+     * Checks if all nuts have been collected into matching baskets
+     * @returns {boolean} true if all nuts are collected
+     */
     checkWinCondition() {
-        // All nuts must be collected
-        return this.nuts.every(nut => nut.collected);
+        // Win condition: All nuts must be collected (landed in matching baskets)
+        const allNutsCollected = this.nuts.every(nut => nut.collected);
+        
+        // Additional validation: number of filled baskets should match collected nuts
+        const collectedCount = this.nuts.filter(nut => nut.collected).length;
+        const filledBasketCount = this.baskets.filter(basket => basket.filled).length;
+        
+        return allNutsCollected && collectedCount === filledBasketCount;
+    }
+
+    /**
+     * Centralized win check and handler - called after animations complete
+     * This ensures consistent win behavior across all levels
+     */
+    checkAndHandleWin() {
+        if (this.winChecked || !this.isPlaying) {
+            return;
+        }
+        
+        if (this.checkWinCondition()) {
+            this.winChecked = true;
+            this.onLevelComplete();
+        }
     }
 
     onLevelComplete() {
