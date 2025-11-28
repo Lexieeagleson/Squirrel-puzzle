@@ -10,7 +10,7 @@ A fun and engaging web-based puzzle game where you help a cute squirrel collect 
 
 ## 🌟 Features
 
-- **12 Challenging Levels** with increasing difficulty
+- **32 Challenging Levels** with increasing difficulty
 - **Multiple Nut Types**: Acorn, Walnut, Chestnut, Hazelnut, Pecan, Almond
 - **Obstacles**: Rocks, logs, and leaves that block your path
 - **Mobile-Friendly**: Works on both desktop and mobile browsers
